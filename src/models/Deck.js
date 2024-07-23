@@ -8,7 +8,7 @@ class Deck {
 
   init() {
     const suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades'];
-    const values = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
+    const values = ['2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K', 'A'];
     suits.forEach(suit => {
       values.forEach(value => {
         this.cards.push(new Card(suit, value));

@@ -11,18 +11,18 @@ function Table({ players, pot, communityCards, tableImage }) {
 			<div className="table__content -ibg_contain">
 				<img className="table__img" src={`${tableImage}`} alt="стол" />
 				{/* <Dealer /> */}
-				<div className='pot'>Банк: {pot}</div>
-				<div className='communityCards'>
+				<div className="pot">Банк: {pot}</div>
+				<div className="communityCards">
 					{communityCards.map((card, index) => (
 						<Card key={index} suit={card.suit} value={card.value} />
 					))}
 				</div>
 			</div>
-				<div className='players'>
-					{players.map((player, index) => (
-						<Player key={index} {...player} />
-					))}
-				</div>
+			<div className="players">
+				{players.map((player, index) => (
+					<Player key={index} {...player} />
+				))}
+			</div>
 		</div>
 	);
 }
