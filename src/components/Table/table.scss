@@ -1,0 +1,60 @@
+// src/components/Table/table.module.scss
+.table {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	flex: 1 1 auto;
+	padding: 40px 0;
+	display: flex;
+	align-items: center;
+	&__content {
+		// position: absolute;
+		// top: 50%;
+		// left: 50%;
+		// transform: translate(-50%, -50%);
+		margin: 0 auto;
+		// height: calc(20vh);
+		height: 450px;
+		width: 70%;
+	}
+
+	&__img {
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.dealer {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	text-align: center;
+	padding: 10px;
+}
+
+.pot {
+	position: absolute;
+	top: 25%;
+	left: 50%;
+	transform: translate(-50%, -25%);
+	text-align: center;
+	font-size: 30px;
+	font-weight: bold;
+	color: rgb(24, 59, 91);
+}
+
+.communityCards {
+	position: absolute;
+	top: 45%;
+	left: 50%;
+	transform: translate(-50%, -45%);
+	display: flex;
+	justify-content: center;
+}
+
+.players {
+	// position: absolute;
+	// width: 100%;
+	// height: 100%;
+}

@@ -1,70 +1,111 @@
-# Getting Started with Create React App
+# Poker University
+Poker University — это веб-приложение для игры в покер по сети, написанное с использованием React. В текущей версии приложение предоставляет базовый интерфейс для игры, включающий отображение стола, игроков, дилера и карт.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Структура проекта
 
-## Available Scripts
+poker-university/
+├── public/
+│   ├── tables/
+│   │   └── 1.png
+│   ├── index.html
+│   └── ...
+├── src/
+│   ├── components/
+│   │   ├── Card/
+│   │   │   ├── index.js
+│   │   │   └── card.module.scss
+│   │   ├── Dealer/
+│   │   │   ├── index.js
+│   │   │   └── dealer.module.scss
+│   │   ├── Header/
+│   │   │   ├── index.js
+│   │   │   └── header.module.scss
+│   │   ├── Player/
+│   │   │   ├── index.js
+│   │   │   └── player.module.scss
+│   │   └── Table/
+│   │       ├── index.js
+│   │       └── table.module.scss
+│   ├── contexts/
+│   │   ├── GameContext.js
+│   ├── hooks/
+│   │   ├── useGameLogic.js
+│   │   └── usePlayerActions.js
+│   ├── pages/
+│   │   ├── Home/
+│   │   │   ├── index.js
+│   │   │   └── home.module.scss
+│   │   └── GameRoom/
+│   │       ├── index.js
+│   │       └── gameroom.module.scss
+│   ├── App.js
+│   ├── index.js
+│   ├── context.js
+│   └── index.scss
+└── package.json
 
-In the project directory, you can run:
+## Текущий функционал
+Стол для покера:
 
-### `npm start`
+Задний фон стола можно изменять.
+<!-- Игроки расположены вокруг стола в зависимости от их количества. -->
+Карты и банк отображаются в центре стола.
+<!-- Дилер всегда отображается сверху стола. -->
+Компоненты:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Card — компонент для отображения карты.
+Dealer — компонент для отображения дилера.
+Player — компонент для отображения игрока, его фишек и карт.
+Table — компонент, объединяющий все элементы стола (игроков, карты, дилера и банк).
+Страницы:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Home — главная страница с кнопкой "Играть".
+GameRoom — страница с игровым столом.
+Контекст:
 
-### `npm test`
+GameContext — используется для управления состоянием игры.
+useGameLogic — хук для логики игры.
+usePlayerActions — хук для действий игрока (например, делать ставки).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Будущий функционал
+Подключение по сети:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Возможность игры по сети с другими игроками.
+Чат для общения между игроками.
+Дополнительные функции:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Система учета очков и рейтингов.
+Поддержка различных типов покера.
+Возможность настройки и изменения внешнего вида стола и карт.
+Улучшенный интерфейс:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Анимации для распределения карт и фишек.
+Звуковые эффекты для улучшения пользовательского опыта.
 
-### `npm run eject`
+### Как запустить проект
+Клонируйте репозиторий:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+git clone https://github.com/your-username/poker-university.git
+cd poker-university
+Установите зависимости:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+npm install
+Запустите проект:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+npm start
+Откройте http://localhost:3000 для просмотра в браузере.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Как это работает
+Компоненты
+Card отображает отдельную карту с ее значением и мастью.
+Dealer отображает дилера, который размещен в верхней части стола.
+Player отображает игрока с его аватаром, фишками, картами и текущей комбинацией.
+Table объединяет всех игроков, дилера, карты и банк, и задает фон стола.
+Контекст и хуки
+GameContext управляет состоянием игры (игроки, банк и т.д.).
+useGameLogic отвечает за игровую логику, такую как раздача карт и определение победителя.
+usePlayerActions предоставляет действия для игроков, такие как возможность делать ставки.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Вклад
+Мы приветствуем вклады в наш проект! Если у вас есть идеи по улучшению функциональности или вы нашли баг, пожалуйста, создайте issue или отправьте pull request.

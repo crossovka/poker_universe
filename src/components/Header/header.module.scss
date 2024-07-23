@@ -1,6 +1,10 @@
 .header{
-	background: beige;
+	background: #333;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 30px 60px;
 }
 h1{
-	color: red;
+	color: rgb(221, 186, 186);
 }

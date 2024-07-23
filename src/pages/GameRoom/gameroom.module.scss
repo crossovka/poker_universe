@@ -1,5 +1,15 @@
 .gameroom {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+	background: beige;
+	display: flex;
+	flex-direction: column;
+
+	&__top {
+		height: 30px;
+		background: purple;
+	}
+	
+	&__controls {
+		height: 40px;
+		background: rgb(245, 169, 245);
+	}
 }

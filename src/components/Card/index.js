@@ -1,3 +1,4 @@
+// src/components/Card/index.js
 import React from 'react';
 import styles from './card.module.scss';
 
