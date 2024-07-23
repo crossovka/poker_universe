@@ -2,19 +2,26 @@ import { useContext } from 'react';
 import { GameContext } from '../contexts/GameContext';
 
 function useGameLogic() {
-  const { state, dispatch } = useContext(GameContext);
+	const { state, dispatch } = useContext(GameContext);
 
-  const addPlayer = (player) => {
-    dispatch({ type: 'ADD_PLAYER', payload: player });
-  };
+	const startGame = () => {
+		dispatch({ type: 'START_GAME' });
+	};
 
-  // другие функции игры
+	const placeBet = (playerId, amount) => {
+		dispatch({ type: 'PLACE_BET', payload: { playerId, amount } });
+	};
 
-  return {
-    state,
-    addPlayer,
-    // другие функции
-  };
+	const dealCommunityCard = () => {
+		dispatch({ type: 'DEAL_COMMUNITY_CARD' });
+	};
+
+	return {
+		state,
+		startGame,
+		placeBet,
+		dealCommunityCard,
+	};
 }
 
 export default useGameLogic;
