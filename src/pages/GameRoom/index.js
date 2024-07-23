@@ -27,12 +27,6 @@ function GameRoom() {
 				tableImage={tableImage}
 			/>
 			<button onClick={() => dealCommunityCard()}>Deal Community Card</button>
-			{state.players.map((player) => (
-				<div key={player.id}>
-					<h3>{player.name}</h3>
-					<button onClick={() => handleBet(player.id, 10)}>Bet 10</button>
-				</div>
-			))}
 
 			<div className={styles.gameroom__controls}></div>
 		</main>
